@@ -1,0 +1,4100 @@
+/*CSS reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+/*
+*{outline: 1px solid #f00;}
+*/
+
+
+
+/*字型*/
+
+
+@font-face {
+  font-family: SourceHanSans;
+  src: url(../font/SourceHanSans-Light.ttc);
+}
+
+
+@font-face{
+	font-family: KangXi;
+	src: url(../font/TypeLand-com-KangXiZiDianTi-ShiYongBan-1.otf);
+}
+h1, h2, h3, div{
+	font-family: KangXi;
+}
+
+a, p, li{
+	font-family: SourceHanSans;
+}
+
+
+
+
+
+
+/*字級*/
+h2{
+	font-size: 35px;
+	text-align: center;
+	position: relative;
+	letter-spacing: 5px;
+}
+h3{
+	font-size: 30px;
+}
+p{
+	text-align: justify;
+	line-height: 2;
+	font-size: 16px;
+	letter-spacing: 3px;
+}
+li{
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 2px;
+}
+
+
+
+
+
+
+/*共用*/
+.full-container{
+	width: 100%;
+	position: relative;
+}
+
+.container{
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	position: relative;
+}
+a{
+	text-decoration: none;
+	color: #666;
+}
+.clearfix:after{
+	content:'';
+	display: block;
+	clear:both;
+}
+body{
+	background-image: url(../images/logo/background.jpg);
+	background-repeat: repeat-y;
+}
+.anchor{
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: -65px;
+}
+
+
+
+
+
+
+/*more*/
+.more{
+	font-family: SourceHanSans; 
+	width: 45px;
+	display: block;
+	font-size: 16px;
+	padding: 3px 10px;
+	text-align: center;
+	line-height:1.5;
+	position: relative;
+	margin: 20px auto;
+	transition: .3s;
+}
+
+.more:before{
+	content:'';
+	width: 20%;
+	height: 50%;
+	border-top: 1px solid #B34230;
+	border-left: 1px solid #B34230;
+	position: absolute;
+	left: 0;
+	top: 0;
+	box-sizing: border-box;
+	transition: .5s;
+}
+.more:after{
+	content:'';
+	width: 20%;
+	height: 50%;
+	border-bottom: 1px solid #B34230;
+	border-right: 1px solid #B34230;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	box-sizing: border-box;
+	transition: .5s;
+}
+
+
+
+@media screen and (min-width: 768px){
+	.more:hover:before{
+	width: 100%;
+	height: 100%;
+	}
+	.more:hover:after{
+		width: 100%;
+		height: 100%;
+	}
+	.more:hover{
+		background-color: #B34230;
+		color: #fff;
+		transition: .2s .3s;
+	}
+
+}
+
+
+
+@media screen and (max-width: 767px){
+	.more{
+		color: #eee;
+		background-color: #B34230;
+	}
+}
+
+
+
+
+
+
+
+/*每頁的圖片標題區*/
+.topPlace{
+	padding-top: 65px;
+}
+
+
+.topPlace .titlebox{
+	height: 450px;
+	background-size: cover;
+	background-position: 50% 50%;
+	position: relative;
+}
+
+.topPlace .titlebox::before,
+.topPlace .titlebox::after{
+	content: '';
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.topPlace .titlebox::before{
+	width: 55%;
+	height: 80%;
+	border: 3px solid #ddd;
+	background-color: rgba(0,0,0,.3);
+}
+
+.topPlace .titlebox::after{
+	writing-mode: vertical-lr;
+	color: #eee;
+	font-size: 50px;
+	text-align: center;
+	margin-left: calc( 50% - 25px );
+	letter-spacing: 10px;
+	text-shadow: -1px 1px 5px #666;
+}
+
+
+
+/*logo*/
+.logo{
+	width: auto;
+	height: 65px;
+	float: left;
+	margin-left: 20px;
+	top: 0;
+}
+
+.logo img{
+	width: auto;
+	height: 100%;
+	filter: drop-shadow(0px 0px 2px #666);
+}
+
+
+
+/*導覽列*/
+.nav{
+	z-index: 50;
+	font-size: 0;
+}
+
+
+.navItem{
+	padding: 0 20px;
+	color: #ddd;
+	font-size: 20px;
+	line-height: 65px;
+	position: relative;
+}
+
+
+
+
+@media screen and (min-width:768px){
+	.nav{
+		width: 100%;
+		height: 65px;
+		background-color: rgba(0,0,0,.7);
+		position: fixed;
+		left: 0;
+		right: 0;
+		text-align: right;
+	}
+	.navItem{
+		display: inline-block;
+		transition: transform .2s .1s, color .2s .1s;
+	}
+	.navItem:after{
+		content:'';
+		width: 0;
+		height: 0;
+		position: absolute;
+		border-bottom: 3px solid #F06548;
+		top: 75%;
+		left: 30px;
+		transition: width .3s;
+	}
+	.navItem:hover:after{
+		width: 60px;
+		transition: width .3s .1s;
+	}
+	.navItem:hover{
+		transform: translateY(-2px) scale(1.05);
+		color: #F06548;
+		transition:transform .2s;
+	}
+	.nav_others{
+		top:0;
+	}
+	.navList .focus{	
+		color:#F06548;
+	}
+	#mobile-nav{
+		display: none;
+	}
+}
+
+
+
+@media screen and (max-width: 767px){
+	header .nav{
+		width: 100%;
+		position: fixed;
+		left: -100%;
+		top: 0px;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, .8);
+		transition: left .5s;
+	}
+	.nav .navItem{
+		display: block;
+		padding: 15px 10px;
+		text-align: left;
+		padding-left: 60px;
+	}
+	.navItem:hover{
+	color: #F06548;
+	transition:transform .2s, color .2s;
+	}
+	.navList{
+		margin-top: 110px;
+	}
+	.logo{
+		width: 0;
+		height: 0;
+		position: absolute;
+		opacity: 0;
+		z-index: -1000;
+	}
+	.mobile-logo{
+		height: 100%;
+		margin-right: 20px;
+		text-align: right;
+	}
+	.mobile-logo img{
+		height: 100%;
+		width: auto;
+		filter: drop-shadow(0px 0px 2px #666);
+	}
+	
+}
+
+
+
+/*漢堡*/
+#mobile-nav{
+	position: fixed;
+	height: 65px;
+	width: 100%;
+	background-color: rgba(0,0,0,.7);
+	z-index: 100;
+}
+
+
+#menu-control{
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	z-index: -1;
+}
+
+#menu-control:checked ~ header .nav{
+	left: 0;
+}
+
+.hb{
+	display: block;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	padding: 5px;
+	border-radius: 15%;
+	background-color: #fff;
+}
+
+.hb span{
+	width: 30px;
+	height: 6px;
+	margin: 5px;
+	background-color: #9B2C24;
+	display: block;
+	transition: .5s;
+}
+#menu-control:checked ~ header .bar1{
+	transform: rotate(-45deg) translate(-8px, 7px);
+}
+
+#menu-control:checked ~ header .bar2{
+	opacity: 0;
+}
+
+#menu-control:checked ~ header .bar3{
+	transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+@media screen and (min-width:768px){
+	.hb{ display: none; }
+}
+
+
+
+
+
+
+/*footer*/
+.footer{
+	width: 100%;
+	background-color: #000;
+	padding: 30px 0;
+	text-align: center;
+}
+.footer .icon img{
+	width: 30px;
+	height: 30px;
+	margin: 0 2.5%;
+}
+.copyright{
+	color: #ccc;
+	font-size: 18px;
+	padding-top: 30px;
+}
+
+
+/*首頁*/
+.index_container{
+	padding: 80px 0;
+}
+
+.index_container h2{
+	margin: 0 auto 50px;
+	width: 200px;
+}
+
+.index_container.bgi{
+	width: 100%;
+	height: 400px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.leadingText h3, 
+.food h3{
+	writing-mode: vertical-lr;
+}
+
+
+@media screen and (min-width:768px){
+	.index_container.bgi{ 
+		background-attachment: fixed;
+		height: 85vh;
+	}
+}
+
+
+/*首頁影片區*/
+img.index_logo{
+	width: 300px;
+	height: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 3;
+	transform: translateY(-100px);
+	filter: drop-shadow(0px 0px 2px #666);
+}
+
+
+.topSection{
+	height: 100vh;
+}
+
+
+#scrollbutton{
+	width: 20px;
+	height: 40px;
+	position: absolute;
+	left:0;
+	right: 0;
+	margin: auto;
+	bottom: 100px;
+	border-radius: 12px;
+	border: 2px solid #fff;
+	filter: drop-shadow(0px 0px 2px #000);
+}
+#scrollbutton:before{
+	content:'';
+	display: block;
+	position: absolute;
+	width: 5px;
+	height: 10px;
+	background-color: #fff;
+	left: 0;
+	right: 0;
+	top: 5px;
+	margin: auto;
+	border-radius: 5px;
+	animation: down 2s 0s ease infinite forwards ;
+}
+
+@keyframes down{
+	  0%{ top: 5px; }
+	 70%{ top: 23px; }
+	100%{ top: 23px; }
+}
+
+
+
+#scrollbutton:after{
+	content:'scroll down';
+	display: block;
+	width: 100px;
+	height: auto;
+	position: absolute;
+	left: -36px;
+	bottom: -30px;
+	color: #fff;
+}
+
+
+
+
+@media screen and (max-width: 767px){
+	.carouselBox{
+		display: none;
+	}
+	#scrollbutton{
+		bottom: 130px;
+	}
+	img.index_logo{
+		width: 260px;
+		transform: translateY(-70px);
+	}
+}
+
+@media screen and (min-width: 768px){
+	.carouselBox {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		vertical-align: bottom;
+	}
+	/* .carouselBox video{
+		width: 1920px;
+		height: auto;
+		margin-left: calc( (100% - 1920px)/2 );
+	} */
+	.carouselBox .carousel-inner{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		transition: all 3.5s;
+	}
+	.carouselBox .carousel-01{
+		background-image: url(../images/index/kamokawa.jpg);
+		opacity: 1;
+	}
+	.carouselBox .carousel-02{
+		background-image: url(../images/index/season_spring.jpg);
+		opacity: 0;
+	}
+	.carouselBox .carousel-03{
+		background-image: url(../images/index/pondocho.jpg);
+		opacity: 0;
+	}
+	.topText{
+		position: absolute;
+		top: 60vh;
+		left: calc( 50% - 190px );
+		font-size: 25px;
+		color: #fff;
+	}
+	.topText p{
+		font-family: KangXi;
+		font-size: 28px;
+		text-shadow: 1px 1px 5px #000;
+	}
+	.topText .child2{
+		position: relative;
+		top: 0px;
+		left: 80px;
+	}
+}
+
+
+
+/*首頁導覽列*/
+
+@media screen and (min-width: 768px){
+	.index_navList{
+		position: absolute;
+		bottom: 0;
+		background-color: rgba(0,0,0,.3);
+	}
+
+	.index_navList .focus{
+		color:#F06548;
+	}
+
+	.sticky{
+	  position: fixed;
+	  top: 0;
+	  width: 100%;
+	  background-color: rgba(0,0,0,.7);
+	}
+
+	.index_navList .logo{
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+/*過場文字*/
+.leadingText .child1, .leadingText .child2{
+	position:absolute;
+	font-size: 25px;
+}
+.leadingText .child1{
+	left: 52%;
+	top: 23%;
+	margin-left: 15px;
+}
+.leadingText .child2{
+ 	left: 48%;
+ 	top: 38%;
+ 	margin-left: -30px;
+ }
+
+.leadingText .container{
+	height: 500px;
+}
+
+
+
+
+
+/*金魚*/
+.kingyo{
+	position: absolute;
+	width: 40px;
+	height: auto;
+}
+.kingyoTop{
+	transform: rotate(105deg);
+	right: 37.5%;
+	top: 16%;
+	width: 60px;
+}
+.kingyoBottom{
+	left: 36%;
+	bottom: 14%;
+	width: 60px;
+}
+
+
+@media screen and (max-width: 767px){
+	.kingyoTop{
+		right: 20%;
+	}
+	.kingyoBottom{
+		left: 18%;
+	}
+}
+
+
+.kingyoRight{
+	position: absolute;
+	right: -25px;
+	top: 0px;
+	transform: rotate(100deg);
+	width: 49px;
+}
+.kingyoLeft{
+	position: absolute;
+	left: -20px;
+	top: -1px;
+	transform: rotate(120deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*首頁推薦行程*/
+.index_tourImg .bgi{
+	background-image: url(../images/index/heianzinguu.jpg);
+}
+.index_container .content{
+	width: 300px;
+	padding: 35px;
+	position: relative;
+	left: 25%;
+	top: 10%;
+	background-color: rgba(0,0,0,.6);
+	color: #fff;
+	border: 2px solid #aaa;
+}
+
+@media screen and (min-width: 768px) {
+	.index_container .content{
+		padding: 40px 60px;
+		left: 15%;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+
+.tour .index_container{
+	padding-bottom: 0;
+}
+
+
+.touritem{
+	margin: auto;
+	padding-bottom: 50px;
+	margin-bottom: 100px;
+	background-repeat: repeat;
+	background-size: contain;
+	background-image: url(../images/index/bg.png);
+	box-shadow: 10px 10px 24px rgba(0,0,0,.1);
+}
+/*.tour1{
+	background-image: url(../images/index/bg1.png);
+}
+.tour2{
+	background-image: url(../images/index/bg2.png);
+}
+.tour3{
+	background-image: url(../images/index/bg3.png);
+}*/
+
+.touritem .more{
+	margin: auto;
+	color: #aaa;
+}
+
+.touritem .titleimg{
+	width: 100%;
+	height: 280px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	box-shadow: 0px 8px 15px -3px #aaa;
+}
+.touritem .season{
+	background-image: url(../images/index/season.jpg); 
+	background-position: 50% 50%;
+} 
+.touritem .history{
+	background-image: url(../images/index/history.jpg); 
+	background-position: 50% 83%;
+} 
+.touritem .place{
+	background-image: url(../images/index/place.jpg); 
+	background-position: 50% 55%;
+} 
+
+
+.touritem h3{
+	position: absolute;
+	font-size: 60px;
+	bottom: 20px;
+	left: 60px;
+	z-index:3;
+	letter-spacing: 10px;
+	text-shadow: 1px 1px 3px #999;
+	/*background-color: #f00;*/
+}
+
+.tour1 h3{
+	color: #9B4B57;
+}
+.tour2 h3{
+	color: #d7bf85;
+}
+.tour3 h3{
+	color: #5B703B;
+}
+
+.touritem .textBox{
+	padding: 25px;
+	width: 45%;
+	text-shadow: 0px 0px 1px #ddd;
+	margin: 10px auto;
+}
+
+
+
+
+.touritem_child{
+	width: 100%;
+	display: flex;
+	flex-flow:row wrap;
+	justify-content: space-evenly;
+}
+
+
+.touritem_child .imgbox{
+	overflow: hidden;
+	display:block;
+	flex-basis: 35%;
+	margin-bottom: 60px;
+	position: relative;
+}
+
+
+
+.touritem_child .img{
+	height: 250px;
+	background-size: cover;
+	background-position: 50% 50%;
+	transition: .5s;
+}
+
+.touritem_child .imgbox:hover .img{
+	transform: scale(1.15);
+}
+
+
+
+
+
+.touritem_child .imgbox::before{
+	content:'';
+	display: block;
+	width: 0;
+	height: 0;
+	border-right: 100px solid transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+
+
+
+.touritem_child .imgbox::after{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	font-size: 30px;
+	font-family: KangXi;
+	z-index: 2;
+}
+
+
+
+
+/*首頁玩味四季*/
+.touritem_child_season .imgbox1{
+	box-shadow: 13px 13px #F3D6EE;
+}
+.touritem_child_season .imgbox2{
+	box-shadow: 13px 13px #B3C7AC;
+}
+.touritem_child_season .imgbox3{
+	box-shadow: 13px 13px #D99E9B;
+}
+.touritem_child_season .imgbox4{
+	box-shadow: 13px 13px #AFC0D8;
+}
+
+
+
+.touritem_child_season .img1{
+	background-image: url(../images/index/season_spring.jpg);
+}
+.touritem_child_season .img2{
+	background-image: url(../images/index/season_summer.jpg);
+}
+.touritem_child_season .img3{
+	background-image: url(../images/index/season_autumn.jpg);
+}
+.touritem_child_season .img4{
+	background-image: url(../images/index/season_winter.jpg);
+}
+
+
+
+
+
+.touritem_child_season .imgbox1::before{
+	border-top: 80px solid #F3D6EE;
+}
+.touritem_child_season .imgbox2::before{
+	border-top: 80px solid #B3C7AC;
+}
+.touritem_child_season .imgbox3::before{
+	border-top: 80px solid #D99E9B;
+}
+.touritem_child_season .imgbox4::before{
+	border-top: 80px solid #AFC0D8;
+}
+
+
+
+
+.touritem_child_season .imgbox1::after{
+	content:'春';
+}
+.touritem_child_season .imgbox2::after{
+	content:'夏';
+}
+.touritem_child_season .imgbox3::after{
+	content:'秋';
+}
+.touritem_child_season .imgbox4::after{
+	content:'冬';
+}
+
+
+
+
+
+
+
+
+/*首頁歷史巡禮*/
+.touritem_child_history .imgbox{
+	box-shadow: 13px 13px #666;
+}
+.touritem_child_history .img1{
+	background-image: url(../images/index/history_child1.jpg);
+}
+.touritem_child_history .img2{
+	background-image: url(../images/index/history_child2.jpg);
+}
+.touritem_child_history .img3{
+	background-image: url(../images/index/history_child3.jpg);
+}
+.touritem_child_history .img4{
+	background-image: url(../images/index/history_child4.jpg);
+}
+
+
+
+
+
+
+.touritem_child_history .imgbox::before{
+	border-top: 80px solid #666;
+}
+
+
+
+.touritem_child_history .imgbox::after{
+	color: #fff;
+	text-shadow: 0px 0px 1px #444;
+}
+
+.touritem_child_history .imgbox1::after{
+	content:'平安';
+}
+.touritem_child_history .imgbox2::after{
+	content:'戰國';
+}
+.touritem_child_history .imgbox3::after{
+	content:'幕末';
+}
+.touritem_child_history .imgbox4::after{
+	content:'近代';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*首頁區域散策*/
+.touritem_child_place .imgbox1{
+	box-shadow: 13px 13px #96C7C1;
+}
+.touritem_child_place .imgbox2{
+	box-shadow: 13px 13px #9B2C24;
+}
+.touritem_child_place .imgbox3{
+	box-shadow: 13px 13px #9B2C24;
+}
+.touritem_child_place .imgbox4{
+	box-shadow: 13px 13px #96C7C1;
+}
+
+
+
+.touritem_child_place .img1{
+	background-image: url(../images/index/place_child1.jpg);
+}
+.touritem_child_place .img2{
+	background-image: url(../images/index/place_child2.jpg);
+}
+.touritem_child_place .img3{
+	background-image: url(../images/index/place_child3.jpg);
+}
+.touritem_child_place .img4{
+	background-image: url(../images/index/place_child4.jpg);
+}
+
+
+
+
+
+.touritem_child_place .imgbox1::before{
+	border-top: 80px solid #96C7C1;
+}
+.touritem_child_place .imgbox2::before{
+	border-top: 80px solid #9B2C24;
+}
+.touritem_child_place .imgbox3::before{
+	border-top: 80px solid #9B2C24;
+}
+.touritem_child_place .imgbox4::before{
+	border-top: 80px solid #96C7C1;
+}
+
+
+
+
+.touritem_child_place .imgbox::after{
+	color: #fff;
+	text-shadow: 0px 0px 1px #444;
+}
+
+.touritem_child_place .imgbox1::after{
+	content:'東山';
+}
+.touritem_child_place .imgbox2::after{
+	content:'銀閣';
+}
+.touritem_child_place .imgbox3::after{
+	content:'宇治';
+}
+.touritem_child_place .imgbox4::after{
+	content:'嵐山';
+}
+
+
+
+
+
+
+@media screen and (max-width:767px){
+	.touritem_child{
+		flex-flow: column;
+		align-items: center;
+	}
+	.touritem_child .imgbox{
+		width: 70%;
+	}
+	.tour1 h3{
+		color: #fff;
+	}
+	.tour h3{
+		text-shadow: 2px 2px 3px #000;
+	}
+	.touritem .textBox{
+		width: 70%;
+	}
+}
+
+
+
+
+
+
+/*首頁賞味美食*/
+.index_foodImg .bgi{
+	background-image: url(../images/index/gion.jpg);
+}
+
+
+
+.foodText{
+	font-size: 0;
+	width: 96%;
+	margin: auto;
+}
+
+.food h2{
+	margin-bottom: 100px;
+}
+
+
+
+.foodText{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.food .item{
+	display: block;
+	font-size: 0;
+	flex: 1 1 250px;
+	padding: 0 1%;
+	box-sizing: border-box;
+	margin-bottom: 30px;
+}
+
+.food .foodItem{
+	margin: auto;
+	width: 10vw;
+	height: 10vw;
+	border-radius: 50%;
+	position: relative;
+	margin: auto;	
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: .5s;
+}
+
+
+
+
+
+.food .foodItem1{
+	background-image: url(../images/index/tendon.jpg);
+}
+.food .foodItem2{
+	background-image: url(../images/index/sandwich.jpg);
+}
+.food .foodItem3{
+	background-image: url(../images/index/matcha.jpg);
+}
+.food .foodItem4{
+	background-image: url(../images/index/cafe.png);
+}
+
+
+
+.leftLine{
+	width: 0;
+	height: 0;
+	border-top: 250px solid #aaa;
+	border-left: 2px solid #aaa;
+	position: absolute;
+	left: -35px;
+	top: -25px;
+}
+
+
+.food h3{
+	position: absolute;
+	left: -15px;
+	top: -25px;
+}
+.food .foodItem1 h3{
+	color: #F06548;
+}
+.food .foodItem2 h3{
+	color: #E4B261;
+}
+.food .foodItem3 h3{
+	color: #9EA72B;
+}
+.food .foodItem4 h3{
+	color: #C28D47;
+}
+
+
+.food .item p{
+	width: 70%;
+	margin: 20px auto 0;
+}
+
+
+
+
+@media screen and (min-width: 768px){
+.food .item:hover .more{
+	background-color: #B34230;
+	color: #fff;
+	transition: .2s .3s;
+	}
+	.food .item:hover .more:before,
+	.food .item:hover .more:after{
+	width: 100%;
+	height: 100%;
+	}
+	.food .item:hover .foodItem{
+		filter: opacity(70%);
+	}
+}
+
+
+
+/*首頁歲時祭儀*/
+.festival .full-container{
+	color: #eee;
+	background-color: #000;
+}
+
+.festival p{
+	width: 650px;
+	margin: auto;
+}
+.festival .more{
+	color: #eee;
+}
+.index_festivalImg .bgi{
+	background-image: url(../images/index/festival2.jpg);
+}
+
+
+
+
+/*首頁景點一覽*/
+.spot p{
+	width: 54%;
+	margin: auto;
+}
+
+
+
+.spot .item{
+	display: block;
+	background-color: #aaa;
+	position: relative;
+	overflow: hidden;
+}
+
+.spot .item .textbox{
+	font-size: 30px;
+	text-align: center;
+	color: #fff;
+	width: 80%;
+	height: 80%;
+	display: block;
+	position: absolute;
+	left: 10%;
+	top: -10%;
+	background-color: rgba(0,0,0,.3);
+	opacity: 0;
+	transition: opacity .5s, top .5s;
+}
+.spot .item:hover .textbox{
+	opacity: 1;
+	top: 10%;
+}
+.spot .item .textbox span{
+	width: 100%;
+	font-size: 25px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.spot .left .item{
+	float: left;
+	margin:10px 1.176470%;
+}
+.spot .left{
+	width: 70.833333%;
+	float:left;
+}
+
+.spot .right{
+	width: 29.166666%;
+	float: right;
+}
+.spot .right .item{
+	margin:10px 2.857142%;
+	float: right;
+}
+
+
+
+.spot .item1{
+	width: 52.941176%;
+	height: 300px;
+	background-image: url(../images/index/kiyomizu1.jpg);
+	height: 300px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.spot .item2{
+	width: 42.352941%;
+	height: 300px;
+	background-image: url(../images/index/fushimiinari.jpg);
+	height: 300px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.spot .item3{
+	width: 29.411764%;
+	height: 400px;
+	background-image: url(../images/index/kinnkaku.jpg);
+	height: 400px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.spot .item4{
+	width: 40%;
+	height: 200px;
+	background-image: url(../images/index/byoudouin.jpg);
+	height: 200px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.spot .item5{
+	width: 23.529411%;
+	height: 200px;
+	background-image: url(../images/index/arashiyama.jpg);
+	height: 200px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.spot .item6{
+	width: 65.882352%;
+	background-image: url(../images/index/kamokawa.jpg);
+	height: 180px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.spot .item7{
+	width: 94.285714%;
+	height: 500px;
+	background-image: url(../images/index/kiyomizu2.jpg);
+	height: 500px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.spot .item8{
+	width: 94.285714%;
+	height: 200px;
+	background-image: url(../images/index/genkou.jpg);
+	height: 200px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.spot .more{
+	margin-bottom: 45px;
+}
+
+
+
+
+
+
+@media screen and (max-width:767px){
+	.spot .item .textbox{
+		opacity: 1;
+		top: 10%;
+		text-shadow: 1px 0px 6px #000;
+		background-color: rgba(0,0,0,.1);
+	}
+
+}
+
+
+
+
+
+
+/*推薦行程頁面*/
+
+/*標題*/
+
+.tour_topPlace .full-container{
+	background-image: url(../images/tour/tour.jpg);
+}
+.tour_topPlace .full-container::after{
+	content:'推薦行程';
+}
+
+
+
+
+
+
+/*子導覽列*/
+.secondNav{
+	padding: 50px 0;
+	height: 30px;
+}
+.secondNav_child{
+	text-align: center;
+	font-size: 0;
+}
+.secondNav_child li{
+	display: inline-block;
+}
+
+.secondNav_child a{
+	display: block;
+	text-decoration: none;
+	font-size: 20px;
+	line-height: 1.5;
+	color: #666;
+	padding: 0px 50px;
+	font-family: KangXi;
+	position: relative;
+	transition: .5s;
+}
+.secondNav_child .colorBar{
+	width: 100%;
+	height: 2px;
+	background-color: #76a7a1;
+	transition: .5s;
+	transform: translateY(-1px);
+}
+
+
+
+@media screen and (min-width: 768px){
+	.secondNav_child li:hover a{
+		transform: translateY(-8px);
+		color: #76a7a1;
+	}
+	.secondNav_child li:hover .colorBar{
+		transform: translateY(-8px);
+		height: 9px;
+}
+	
+}
+
+
+
+#season .more, #place .more{
+	position: absolute;
+}
+
+#spring .more, #autumn .more{
+	right: 30%;
+	bottom: 0px;
+}
+#summer .more, #winter .more{
+	right: 30%;
+	bottom: 0px;
+}
+#place .more{
+	right: 15px;
+	bottom: 20px;
+}
+
+/*玩味四季*/
+
+#spring, #summer, #autumn, #winter{
+	width: 100%;
+}
+.tourWrap{
+	position: relative;
+}
+.tourWrap .title{
+	position: relative;
+	background-size: cover;
+	width: 100%;
+	height: 350px;
+	box-sizing: border-box;
+}
+#season .title{
+	background-image: url(../images/tour/season.jpg);
+	background-position: 50% 23%;
+}
+#history .title{
+	background-image: url(../images/tour/history.jpg);
+	background-position: 50% 85%;
+}
+#place .title{
+	background-image: url(../images/tour/place.jpg);
+	background-position: 50% 50%;
+}
+.tourWrap .title h2{
+	width: 150px;
+	height: 300px;
+	font-size: 60px;
+	writing-mode: vertical-lr;
+	letter-spacing: 15px;
+	text-shadow: 2px 2px 3px #444;
+	color: #fff;
+	position: relative;
+	}
+
+.tourWrap .title span{
+	position: absolute;
+}
+.tourWrap .title .title1{
+	top: 15%;
+	left: 50%;
+}
+.tourWrap .title .title2{
+	bottom: 0%;
+    left: 100%;
+}
+
+
+.tourWrap .container{
+	padding-bottom: 50px;
+}
+
+.tourWrap .introtext{
+	font-family: KangXi;
+	font-size: 18px;
+	margin: auto;
+	padding: 30px;
+}
+
+.tourWrap .title .introtext{
+	width: 40%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #fff;
+	text-shadow: 2px 1px 5px #000;
+}
+.tourWrap .tourContent .introtext{
+		display: none;
+	}
+
+
+@media screen and (max-width: 767px){
+	.tourWrap .tourContent .introtext{
+		display: block;
+		width: 80%;
+		color: #666;
+	}
+	.tourWrap .title .introtext{
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+.tourWrap h2 img{
+	height: auto;
+	position: absolute;
+    left: 145%;
+    bottom: -7%;
+}
+
+#season .title img{
+	width: 95px;
+	transform: rotate(-45deg);
+	filter: drop-shadow( 0px 0px 2px rgba(0,0,0,.5));
+}
+
+#history .title img{
+	width: 120px;
+	filter: drop-shadow( 0px 0px 2px rgba(255,255,255,0.6));
+}
+
+#place .title img{
+	width: 115px;
+	filter: drop-shadow( 0px 0px 2px rgba(255,255,255,0.5));
+}
+
+
+
+
+.seasonContent>div{
+	padding: 100px 0;
+	position: relative;
+}
+.seasonContent{
+	font-size: 0;
+}
+
+
+.seasonContent h3{
+	z-index: 5;
+	color: #888;
+	font-size: 110px;
+    position: absolute;
+}
+#spring h3{
+    top: 70px;
+    right: 17%;
+}
+#summer h3{	
+    top: 70px;
+    left: 19%;
+}
+#autumn h3{
+    top: 70px;
+    right: 17%;
+}
+#winter h3{
+    top: 70px;
+    left: 19%;
+}
+
+
+#season .spring_img, #season .autumn_img{
+	width: 50%;
+	height: 240px;
+	display: inline-block;
+	vertical-align: bottom;
+	position: relative;
+	left: 5%;
+	z-index: 3;
+}
+
+
+#season .img .toleft,
+#season .img .toright{
+		position: absolute;
+		top: 45%;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: rgba(255,255,255,.7);
+		z-index:3;
+		cursor: pointer;
+}
+
+
+#season .img .toleft{
+	left: 5%;
+}
+#season .img .toright{
+	right: 5%;
+}
+
+
+#season .img .toleft::after,
+#season .img .toright::after{
+	content:'';
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 40%;
+    height: 40%;
+    border-left: 5px solid #555;
+    border-bottom: 5px solid #555;
+    z-index: 4;
+    cursor: pointer;
+}
+
+
+#season .img .toleft::after{
+	left: 10%;
+	right: 0;
+	transform: rotate(45deg);
+}
+
+#season .img .toright::after{
+	left: 0;
+	right: 10%;
+	transform: rotate(225deg);
+}
+
+
+
+@media screen and (min-width: 768px){
+	#season .img .toleft{
+		left: 20%;
+	}
+	#season .img .toright{
+		right: 20%;
+	}
+}
+
+
+#season .spring_txt, #season .autumn_txt{
+	width: 50%;
+	height: 240px;
+	display: inline-block;
+	z-index: 2;
+	vertical-align: bottom;
+	font-size: 16px;
+	position: relative;
+	right: 15%;
+	top: 60px;
+}
+#season .spring_txt{
+	background-color: #f3d6ee;
+}
+#season .summer_txt{
+	background-color: #b3c7ac;
+}
+ #season .autumn_txt{
+ 	background-color: #d99e9b;
+ }
+ #season .winter_txt{
+ 	background-color: #afc0d8;
+ }
+.spring_txt p, .autumn_txt p{
+	display: inline-block;
+	width: 55%;
+	box-sizing: border-box;
+	position: relative;
+	left: 30%;
+	padding: 20px;
+	font-size: 14px;
+}
+.spring_txt span:after{
+	display: inline-block;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+#summer{
+	float:right;
+}
+#season .summer_img, #season .winter_img{
+	width: 50%;
+	height: 240px;
+	display: inline-block;
+	vertical-align: bottom;
+	position: relative;
+	right: 50px;
+	z-index: 3;
+}
+#season .summer_txt, #season .winter_txt{
+	width: 50%;
+	height: 240px;
+	display: inline-block;
+	z-index: 2;
+	vertical-align: bottom;
+	position: relative;
+	left: 15%;
+	top: 60px;
+}
+.summer_txt p, .winter_txt p{
+	display: inline-block;
+	width: 55%;
+	box-sizing: border-box;
+	padding: 20px;
+	position: relative;
+	left: 18%;
+	font-size: 14px;
+}
+
+#autumn{
+	float:left;
+}
+
+#winter{
+	float: right;
+}
+
+
+
+
+
+@media screen and (max-width: 767px){
+	#season .spring_img, #season .autumn_img,
+	#season .spring_txt, #season .autumn_txt,
+	#season .summer_img, #season .winter_img,
+	#season .summer_txt, #season .winter_txt,
+	.spring_txt p,
+	.summer_txt p,
+	.autumn_txt p,
+	.winter_txt p{
+		display: block;
+		width: 80%;
+		left:0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		overflow: hidden;
+	}
+	#summer h3, #winter h3{
+		left: 10%;
+	}
+	#spring h3, #summer h3, #autumn h3, #winter h3{
+		top:25px;
+	}
+	#spring .more, 
+	#summer .more, 
+	#autumn .more, 
+	#winter .more{
+		position: static;
+		transform: translateY(-30px);
+	}
+	#season .summer_txt, #season .winter_txt{
+		transform: translateY(240px);
+	}
+	#season .summer_img, #season .winter_img{
+		transform: translateY(-240px);
+	}
+}
+
+
+
+@media screen and ( min-width: 768px ){
+	#season .spring_img, 
+	#season .autumn_img,
+	#season .spring_txt, 
+	#season .autumn_txt{
+		clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+	}
+	#season .summer_img, 
+	#season .winter_img,
+	#season .summer_txt, 
+	#season .winter_txt{
+		clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+/*四季頁面的輪播圖*/
+
+
+#season .img img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+img[src="tour/spring1.jpg"]{
+	object-position: 50% 50%;
+}
+img[src="tour/spring2.jpg"]{
+	object-position: 50% 50%;
+}
+img[src="tour/spring3.jpg"]{
+	object-position: 50% 50%;
+}
+
+
+
+img[src="tour/summer1.jpg"]{
+	object-position: 50% 50%;
+}
+img[src="tour/summer2.jpg"]{
+	object-position: 50% 50%;
+}
+img[src="tour/summer3.jpg"]{
+	object-position: 50% 50%;
+}
+
+
+
+img[src="tour/autumn1.jpg"]{
+	object-position: 50% 5%;
+}
+img[src="tour/autumn2.jpg"]{
+	object-position: 50% 50%;
+}
+img[src="tour/autumn3.jpg"]{
+	object-position: 50% 50%;
+}
+
+
+
+img[src="tour/winter1.jpg"]{
+	object-position: 50% 10%;
+}
+img[src="tour/winter2.jpg"]{
+	object-position: 50% 50%;
+}
+img[src="tour/winter3.jpg"]{
+	object-position: 50% 50%;
+}
+
+
+
+
+/*歷史巡禮頁面*/
+#history .pic, #history .txt{
+	position: absolute;
+}
+#history .pic{
+	width: 34%;
+	height: 300px;
+	background-size: cover;
+}
+
+
+
+#history .txt{
+	width: 25%;
+	letter-spacing: 5px;
+}
+
+.historyContent .content{
+	padding: 320px 0;
+}
+
+
+#history .item{
+	text-align: center;
+	position: relative;
+	width: 100%;
+	height: 200px;
+	/*margin-left: 50%;
+	transform: translateX(-50%);*/
+	font-size: 40px;	
+}
+
+#history .item .subtitle{
+	font-family: Kangxi;
+	writing-mode: vertical-lr;	
+	transition: .5s;
+}
+#history .item .subtitle:hover{
+	text-shadow: -5px 5px 8px #aaa;
+	transform: translate(-5px, -5px);
+}
+
+#history .content{
+	position: relative;
+}
+#history .pic-1{
+	left: 8%;
+	top: 90px;
+}
+#history .pic-2{
+	right: 8%;
+	bottom: 120px;
+}
+#history .txt-1{
+	left: 12%;
+	bottom: 85%;
+}
+#history .txt-2{
+	right:12%;
+	top: 170px;
+}
+#history p{
+	font-size: 16px;
+}
+#history .more{
+	transform: translateX(3px);
+}
+
+
+#history .heian .pic-1{
+	background-image: url(../images/tour/heian-1.jpg);
+	background-position: 50% 60%;
+}
+
+
+#history .heian .pic-2{
+	background-image: url(../images/tour/heian-2.jpg);
+	background-position: 100% 50%;
+}
+
+
+#history .sengoku .pic-1{
+	background-image: url(../images/tour/sengoku-1.jpg);
+	background-position: 50% 60%;
+}
+#history .sengoku .pic-2{
+	background-image: url(../images/tour/sengoku-2.jpg);
+	background-position: 100% 50%;
+}
+
+
+#history .edo .pic-1{
+	background-image: url(../images/tour/edo-1.jpg);
+	background-position: 50% 60%;
+}
+#history .edo .pic-2{
+	background-image: url(../images/tour/edo-2.jpg);
+	background-position: 100% 50%;
+}
+
+
+#history .modern .pic-1{
+	background-image: url(../images/tour/modern-1.jpg);
+	background-position: 50% 10%;
+}
+#history .modern .pic-2{
+	background-image: url(../images/tour/modern-2.jpg);
+	background-position: 100% 50%;
+}
+
+
+
+
+
+@media screen and (max-width:767px){
+	.historyContent .content {
+    padding: 90px 0;
+	}
+	#history .pic, 
+	#history .txt{
+	position: static;
+	width: 80%;
+	margin: 50px auto;
+	}
+	#history .txt{
+		height: auto;
+	}
+	#history .more{
+		position: static;
+		margin: auto;
+	}
+	.placeContent .item{
+		width: 80%;
+	}
+	#history .item{
+		height: auto;
+	}
+
+}
+
+
+@media screen and (min-width:768px){
+	#history .item .subtitle:hover ~ .more{
+	background-color: #B34230;
+	color: #fff;
+	transition: .2s .3s;
+	}
+	#history .item .subtitle:hover ~ .more:before,
+	#history .item .subtitle:hover ~ .more:after{
+	width: 100%;
+	height: 100%;
+	}
+}
+
+
+/*區域散策頁面*/
+.placeContent{
+	font-size: 0;
+}
+.placeContent .img{
+	width: 53%;
+	height: 500px;
+	vertical-align: bottom;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	transition: .6s .1s;
+}
+
+.placeContent .img{
+	position: relative;
+}
+
+.placeContent .img:after{
+	font-family: KangXi;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color:#fff;
+	font-size: 50px;
+	writing-mode: vertical-lr;
+	text-align: center;
+	text-shadow: 0px 0px 15px #000;
+	transition: 1s;
+}
+
+.placeContent .img:before{
+	font-family: KangXi;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,1);
+	box-sizing: border-box;
+	transition: 1s;
+}
+
+
+@media screen and (min-width:768px){
+
+.placeContent .img:before{
+	background-color: rgba(0,0,0,.3);
+}
+
+.placeContent .img:hover:before{
+	background-color: rgba(0,0,0,0);
+}
+
+
+.placeContent .img:hover ~ .more{
+	background-color: #B34230;
+	color: #fff;
+	transition: .2s .3s;
+}
+
+.placeContent .img:hover ~ .more:before,
+.placeContent .img:hover ~ .more:after{
+	width: 100%;
+	height: 100%;
+	}
+
+}
+
+
+
+
+
+.placeContent .img-1:after{
+	content:'東山';
+}
+.placeContent .img-2:after{
+	content:'銀閣';
+}
+.placeContent .img-3:after{
+	content:'宇治';
+}
+.placeContent .img-4:after{
+	content:'嵐山';
+}
+
+
+
+
+.placeContent .img-1{
+	background-image: url(../images/tour/place-1.png);
+}
+.placeContent .img-2{
+	background-image: url(../images/tour/place-2.png);
+}
+.placeContent .img-3{
+	background-image: url(../images/tour/place-3.png);
+}
+.placeContent .img-4{
+	background-image: url(../images/tour/place-4.jpg);
+}
+
+.placeContent .content{
+	width: 45%;
+	height: 200px;
+	box-sizing: border-box;
+	padding: 10px;
+	position: absolute;
+	right: 0;
+	bottom: 250px;
+	opacity: 1;
+	transition: .5s;
+}
+
+
+.placeContent .item :nth-child(n){
+	display: inline-block;
+}
+.placeContent .item:nth-child(n):after{
+	content:'';
+	width: 0;
+	height: 100%;
+	border-left: 1px solid #aaa;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.placeContent .item{
+	width: 46%;
+	display: inline-block;
+	font-size: 0;
+	margin: 2%;
+	padding: 25px 0px 25px 25px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+
+
+
+
+
+@media screen and (max-width:767px){
+	.placeContent .item{
+		width: 100%;
+		display: block;
+		margin: 0px auto 50px;
+		padding: 0;
+	}
+	.placeContent .item .content,
+	.placeContent .item .img{
+		width: 80%;
+		position: relative;
+		display: block;
+		margin: auto;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+	.placeContent .content{
+		height: auto;
+	}
+	#place .more{
+	display: block;
+	position: static;
+	margin: auto;
+	}
+}
+
+@media screen and (min-width:768px){
+	.placeContent .img:hover{
+		width: 70%;
+		overflow: hidden
+	}
+	.placeContent .img:hover + p{
+		opacity: 0;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*賞味美食頁面*/
+
+.food_topPlace .full-container{
+	background-image: url(../images/food/food.jpg);
+}
+.food_topPlace .full-container::after{
+	content:'賞味美食';
+}
+
+
+	/*.foodPage .foodbox::after{
+		content: '';
+		display: block;
+		width: 80%;
+		margin: auto;
+		margin-top: 30px;
+		border-bottom: 1px solid #aaa;
+	}*/
+.foodPage .foodbox{
+	margin-bottom: 100px;
+	position: relative;
+}
+
+
+.foodPage .foodbox h1{
+	font-size: 35px;
+	border-bottom: 1px solid #000;
+	width: 100%;
+	line-height: 1.5;
+	padding: 20px;
+	box-sizing: border-box;
+	margin-bottom: 30px;
+}
+
+.foodbox .itembox{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.foodbox .item{
+	display: block;
+	flex: 1 1 45%;
+	margin: 20px;
+	margin-bottom: 220px;
+	height: 300px;
+	position: relative;
+}
+
+.foodbox .item::before,
+.foodbox .item::after{
+	content:'';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-repeat: no-repeat;
+}
+
+.foodbox .item::before{
+	background-size: cover;
+	transition: 0s .3s;
+}
+
+
+
+
+.foodbox .item::after{
+	cursor: pointer;
+	background-image: linear-gradient(120deg,transparent 30%, rgba(255,255,255,.5) 30%, rgba(255,255,255,.5) 60%, transparent 50%);
+	background-position: -600px 0px;
+	transition: .6s;
+}
+.foodbox .item:hover:after{
+	background-position: 600px 0px;
+}
+
+
+
+
+.foodbox .textbox{
+	width: 75%;
+	box-sizing: border-box;
+	margin: auto;
+	position: absolute;
+	left:0;
+	right: 0;
+	top:200px;
+	padding-left: 8%;
+	padding-right: 4%;
+	background-color: rgba(255,255,255,0.7);
+	transition: .3s;
+}
+
+.foodbox .item:hover .textbox{
+	background-color: rgba(190, 176, 144, 0.85);
+	transition: .3s .3s;
+}
+
+
+.foodbox .textbox h2{
+	font-weight: bold;
+	font-family: SourceHanSans;
+	position: relative;
+	text-align: left;
+	width: 100%;
+	bottom: 20px;
+	margin-bottom: 0;
+	text-shadow: 2px 2px 5px #333;
+	color: #fff;
+}
+.foodbox .textbox ul{
+	width: 100%;
+	box-sizing: border-box;
+	border-top: 1px solid #000;
+	margin: auto;
+	padding-top: 5px;
+	z-index:500;
+}
+
+.foodbox .textbox li{
+	padding: 12px;
+	font-size: 0;
+	z-index:100;
+}
+
+.foodbox .textbox li+li{
+	border-top: 1px solid #aaa;
+}
+.foodbox .item .subtitle{
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+.foodbox .item .subtext{
+	width: 70%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+
+@media screen and (max-width: 767px){
+	.foodbox .item{
+		margin-bottom: 250px;
+	}
+	.foodbox .more{
+		background-color: #BEB090;
+	}
+	.foodPage .foodbox h1{
+	width: 70%;
+	margin-left: 20px;
+	}
+	.foodbox .item::after{
+	background-image: linear-gradient(115deg,transparent 30%, rgba(255,255,255,.5) 30%, rgba(255,255,255,.5) 60%, transparent 50%);
+	}
+}
+
+
+
+
+
+.foodbox .more{
+	margin: auto;
+	margin-top: 20px;
+	width: 70px;
+}
+.foodbox .more:hover{
+	background-color: #BEB090;
+}
+
+.foodbox .more:before{
+	border-top: 1px solid #BEB090;
+    border-left: 1px solid #BEB090;
+}
+
+
+.foodbox .more:after{
+	border-bottom: 1px solid #BEB090;
+    border-right: 1px solid #BEB090;
+}
+
+
+
+
+
+
+/*美食圖片*/
+
+
+.foodbox .washoku1::before{
+	background-image: url(../images/food/washoku1-1.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .washoku2::before{
+	background-image: url(../images/food/washoku2-1.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .washoku3::before{
+	background-image: url(../images/food/washoku3-1.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .washoku4::before{
+	background-image: url(../images/food/washoku4-1.jpg);
+	background-position: 50% 50%;
+}
+
+
+.foodbox .washoku1:hover:before{
+	background-image: url(../images/food/washoku1-2.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .washoku2:hover:before{
+	background-image: url(../images/food/washoku2-2.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .washoku3:hover:before{
+	background-image: url(../images/food/washoku3-2.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .washoku4:hover:before{
+	background-image: url(../images/food/washoku4-2.jpg);
+	background-position: 50% 50%;
+}
+
+
+
+
+
+
+.foodbox .yoshoku1::before{
+	background-image: url(../images/food/yoshoku1-1.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .yoshoku2::before{
+	background-image: url(../images/food/yoshoku2-1.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .yoshoku3::before{
+	background-image: url(../images/food/yoshoku3-1.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .yoshoku4::before{
+	background-image: url(../images/food/yoshoku4-1.jpg);
+	background-position: 50% 50%;
+}
+
+
+.foodbox .yoshoku1:hover:before{
+	background-image: url(../images/food/yoshoku1-2.jpg);
+}
+.foodbox .yoshoku2:hover:before{
+	background-image: url(../images/food/yoshoku2-2.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .yoshoku3:hover:before{
+	background-image: url(../images/food/yoshoku3-2.png);
+	background-position: 50% 50%;
+}
+.foodbox .yoshoku4:hover:before{
+	background-image: url(../images/food/yoshoku4-2.jpg);
+	background-position: 50% 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.foodbox .matcha1::before{
+	background-image: url(../images/food/matcha1-1.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .matcha2::before{
+	background-image: url(../images/food/matcha2-1.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .matcha3::before{
+	background-image: url(../images/food/matcha3-1.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .matcha4::before{
+	background-image: url(../images/food/matcha4-1.jpg);
+	background-position: 50% 50%;
+}
+
+
+.foodbox .matcha1:hover:before{
+	background-image: url(../images/food/matcha1-2.jpg);
+	background-position: 50% 0%;
+}
+.foodbox .matcha2:hover:before{
+	background-image: url(../images/food/matcha2-2.jpg);
+	background-position: 50% 80%;
+}
+.foodbox .matcha3:hover:before{
+	background-image: url(../images/food/matcha3-2.jpg);
+	background-position: 50% 100%;
+}
+.foodbox .matcha4:hover:before{
+	background-image: url(../images/food/matcha4-2.jpg);
+	background-position: 50% 50%;
+}
+
+
+
+
+.foodbox .cafe1::before{
+	background-image: url(../images/food/cafe1-1.jpg);
+	background-position: 50% 100%;
+}
+.foodbox .cafe2::before{
+	background-image: url(../images/food/cafe2-1.jpg);
+	background-position: 50% 90%;
+}
+.foodbox .cafe3::before{
+	background-image: url(../images/food/cafe3-1.jpg);
+	background-position: 50% 30%;
+}
+.foodbox .cafe4::before{
+	background-image: url(../images/food/cafe4-1.jpg);
+	background-position: 50% 50%;
+}
+
+
+
+.foodbox .cafe1:hover:before{
+	background-image: url(../images/food/cafe1-2.jpg);
+	background-position: 50% 50%;
+}
+.foodbox .cafe2:hover:before{
+	background-image: url(../images/food/cafe2-2.jpg);
+	background-position: 50% 75%;
+}
+.foodbox .cafe3:hover:before{
+	background-image: url(../images/food/cafe3-2.jpg);
+	background-position: 50% 70%;
+}
+.foodbox .cafe4:hover:before{
+	background-image: url(../images/food/cafe4-2.jpg);
+	background-position: 50% 60%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*歲時祭儀頁面*/
+.festival_topPlace .full-container{
+	background-image: url(../images/festival/festival.jpg);
+}
+.festival_topPlace .full-container::after{
+	content:'歲時祭儀';
+}
+
+/*月份線性圖*/
+.month{
+	text-align: center;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	box-sizing: border-box;
+	border: 3px solid #96C7C1;
+	margin: auto;
+	color: #96C7C1;
+	font-weight: bold;
+}
+.month:before{
+	content:'';
+	width: 0;
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+.month h4{
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 18px;
+}
+.monthLine{
+	width: 0;
+	height: 0;
+	border-top: 300px solid #96C7C1;
+	border-left: 2px solid #96C7C1;
+	margin: auto;
+}
+.endingMonthLine{
+	width: 0;
+	height: 0;
+	border-top: 400px solid #96C7C1;
+	border-left: 2px solid #96C7C1;
+	margin: auto;
+}
+.endingCircle{
+	border-radius: 50%;
+	width: 0;
+	margin: 0;
+	margin: auto;
+	border: 5px solid #96C7C1;
+}
+
+
+/*內容*/
+
+
+.festivalIntro{
+	width: 33.333333%;
+	overflow: auto;
+	margin-bottom: 50px;
+}
+.schedule{
+	padding-top: 70px;
+	margin:auto;
+	padding-bottom: 120px;
+} 
+.schedule .container{
+	position: relative;
+}
+.schedule .festivalPic{
+	display: block;
+	width: 41.666666%;
+	height: auto;
+}
+
+.schedule .festivalIntro span{
+	display: block;/*
+	font-weight: bold;*/
+	font-size: 20px;
+	text-align: center;
+	line-height: 3;
+	color: #444;
+}
+
+
+/*文章*/
+
+.onLeft{
+	left: 12.5%;
+}
+.onRight{
+	right: 12.5%;
+}
+
+.jan{
+	top: 100px;
+}
+.feb{
+	top: 500px;
+}
+.mar{
+	top: 900px;
+}
+.apr{
+	top: 1300px;
+}
+.may{
+	top: 1700px;
+}
+.jun{
+	top: 2100px;
+}
+.jul{
+	top: 2500px;
+}
+.aug{
+	top: 2900px;
+}
+.sep{
+	top: 3300px;
+}
+.oct{
+	top: 3700px;
+}
+.nov{
+	top: 4100px;
+}
+.dec{
+	top: 4500px;
+}
+
+
+/*歲時圖片*/
+.picLeft{
+	left: 4.166666%;
+}
+.picRight{
+	right: 4.166666%;
+}
+
+.janPic{
+	top: 100px;
+}
+.febPic{
+	top: 500px;
+}
+.marPic{
+	top: 900px;
+}
+.aprPic{
+	top: 1300px;
+}
+.mayPic{
+	top: 1700px;
+}
+.junPic{
+	top: 2100px;
+}
+.julPic{
+	top: 2500px;
+}
+.augPic{
+	top: 2900px;
+}
+.sepPic{
+	top: 3300px;
+}
+.octPic{
+	top: 3700px;
+}
+.novPic{
+	top: 4100px;
+}
+.decPic{
+	top: 4500px;
+}
+
+
+
+
+@media screen and ( max-width: 767px ){
+	.monthLine,	.endingMonthLine, .endingCircle{
+		display: none;
+	}
+	.schedule .festivalPic{
+		width: 80%;
+		margin: auto;
+	}
+	.schedule .festivalIntro{
+		width: 80%;
+		margin: 0 auto 75px;
+	}
+}
+@media screen and ( min-width: 768px ){
+	.festivalIntro, .festivalPic{
+		position: absolute;
+	}
+}
+
+
+
+/*景點一覽頁面*/
+
+
+
+
+/*
+.select{
+	text-align: center;
+	font-size: 0;
+	padding-bottom: 20px;
+}
+.select a{
+	margin: 0;
+	padding: 0px 24px;
+	font-size: 16px;
+}
+.select a + a{
+	border-left: 1px solid #aaa;
+}
+*/
+.spot_topPlace .full-container{
+	background-image: url(../images/spot/spot.jpg);
+}
+.spot_topPlace .full-container::after{
+	content:'景點一覽';
+}
+
+
+
+.spotPage{
+	padding-bottom: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+.spotItem{
+	display: block;
+	width: 16.666666%;
+	padding-bottom: 16.666666%;
+	height: 0;
+	margin: 4.166666%;
+	position:relative;
+	box-sizing: border-box;
+	border:2px solid #aaa;
+	cursor: pointer;
+	transition: transform .5s,border-radius .5s;
+}
+
+
+
+.spotItem div{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	text-align: center;
+	z-index:3;
+	transition: border-radius .5s;
+}
+
+
+
+.spotItem img{
+	height: 100%;
+	transform: translate(-18%);		
+}
+
+
+.spotItem:before{
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	width: 85%;
+	height: 85%;
+	transform: rotate(30deg);
+	transform-origin:center;
+	border: 1px solid #aaa;
+	z-index: -1;
+	transition: transform .5s;
+}
+.spotItem:after{
+	font-size: 1.5vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	color: #ddd;
+	text-shadow: 1px 1px 8px #333;
+	opacity: 0;
+	transition: opacity .5s;
+	z-index: 5;
+	padding-top: calc( 50% - 0.75vw );
+}
+
+
+
+
+.spotItem:after{
+	font-weight: bold;
+}
+
+
+.spotItem1:after{
+	content:'下鴨神社';
+}
+.spotItem2:after{
+	content:'平安神宮';
+}
+.spotItem3:after{
+	content:'二条城';
+}
+.spotItem4:after{
+	content:'銀閣寺';
+}
+.spotItem5:after{
+	content:'東寺';
+}
+.spotItem6:after{
+	content:'三十三間堂';
+}
+.spotItem7:after{
+	content:'立命館大學';
+}
+.spotItem8:after{
+	content:'上賀茂神社';
+}
+.spotItem9:after{
+	content:'金閣寺';
+}
+.spotItem10:after{
+	content:'北野天滿宮';
+}
+.spotItem11:after{
+	content:'貴船神社';
+}
+.spotItem12:after{
+	content:'同志社大學';
+}
+.spotItem13:after{
+	content:'八坂神社';
+}
+.spotItem14:after{
+	content:'伏見稲荷大社';
+}
+.spotItem15:after{
+	content:'鐵道博物館';
+}
+.spotItem16:after{
+	content:'天龍寺';
+}
+.spotItem17:after{
+	content:'京都御所';
+}
+.spotItem18:after{
+	content:'龍安寺';
+}
+.spotItem19:after{
+	content:'Rohm theater';
+}
+.spotItem20:after{
+	content:'嵐山';
+}
+
+
+
+
+.spotPage .secondNav_child a{
+	padding: 0 25px;
+}
+
+@media screen and (max-width: 767px){
+	.secondNav{
+		height: auto;
+		box-sizing: border-box;
+		padding: 10px;
+		margin-bottom: 100px;
+	}
+	.secondNav_child li{
+		display: block;
+		width: 40%;
+		margin: auto;
+		padding-top: 35px;
+	}
+	.secondNav_child a{
+		padding: 0;
+	}
+	.spotItem{
+		display: inline-block;
+		width: 40%;
+		padding-bottom: 40%;
+		height: 0;
+	}
+	.spotItem:after{
+		font-size: 22px;
+	}
+}
+
+
+
+
+
+
+@media screen and (min-width: 768px){
+	.spotItem{
+		float: left;
+	}
+	.spotItem:hover{
+		transform: scale(1.25);
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	.spotItem:hover div{
+		border-radius: 50%;
+	}
+	.spotItem:hover:before{
+		transform: rotate(0deg) scale(1);
+	}
+	.spotItem:hover img{
+		filter: blur(3px);
+	}
+	.spotItem:hover:after{
+		opacity: 1;
+	}
+}
+
+
+
+
+
+
+.pageChange{
+	text-align: center;
+	margin-top: 20px;
+	font-size: 0;
+}
+.leftArrow{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-bottom: 1px solid #aaa;
+	border-left: 1px solid #aaa;
+	transform: rotate(45deg);
+	vertical-align: middle;
+}
+.rightArrow{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-top: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	transform: rotate(45deg);
+	vertical-align: middle;
+}
+.pageChange a,.select a{
+	display: inline-block;
+	text-decoration: none;
+	color: #888;
+	vertical-align: middle;
+	padding: 15px;
+	font-size: 20px;
+}
+
+
+
+.pageChange a:hover{
+	color: #F06548;
+}
+.pageChange a:hover .leftArrow{
+	border-bottom: 1px solid #F06548;
+	border-left: 1px solid #F06548;
+}
+.pageChange a:hover .rightArrow{
+	border-top: 1px solid #F06548;
+	border-right: 1px solid #F06548;
+}
+
+
+
+
+
+/*景點一覽子頁面*/
+#boxBg{
+	display: none;
+	position: fixed;
+	width: 100%;
+    height: 100%;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(66,66,66,.6);
+    z-index: 100;
+}
+
+
+
+
+#spotBox .content{
+	padding: 10px;
+}
+
+
+#spotBox h1,#spotBox .item2 h2,#spotBox .item2 p{
+	letter-spacing: 3px;
+}
+#spotBox h1{
+	font-size: 25px;
+	margin-left: 40px;
+	margin-top: 10px;
+	line-height: 1.5;
+}
+#spotBox h2{
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	line-height: 1.5;
+	margin: 0;
+}
+#spotBox p{
+	width: 100%;
+	font-size: 16px;
+	line-height: 2;
+}
+
+
+
+#spotBox{
+	background-color: rgba(33,33,33,.9);
+	color: #eee;
+	border-radius: 55px 55px;
+	z-index: 50;
+	top: 10vh;
+    right: 0;
+    left: 0;
+    position: absolute;
+    margin: auto;
+	display: block;
+	width: 700px;
+	line-height: 1;
+	text-align: left;
+}
+
+
+#spotBox .item1{
+	width: 55%;
+	padding: 15px;
+	font-size: 0;
+	box-sizing: border-box;
+}
+#spotBox .item2{
+	width: 45%; 
+	padding: 15px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+#spotBox .item{
+	float: left;
+}
+
+#spotBox .largePic{
+	display: block;
+	height: 280px;
+	overflow: hidden;
+}
+#spotBox .largePic img{
+	width: 100%;
+	height:100%;
+	object-fit: cover;
+}
+
+#spotBox .smallPic{
+	display: flex;
+	justify-content: space-between;
+	padding-top: 15px;
+}
+
+#spotBox .smallPic a{
+	display: block;
+	width: 22%;
+	height: 80px;
+	overflow: hidden;
+	object-fit: fill;
+	cursor: pointer;
+}
+#spotBox .smallPic img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+#spotBox p.bottom{
+	width: 97.368421%;
+	margin: auto;
+	font-size: 16px;
+	line-height:1.5;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+
+
+
+
+#close{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid #000;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-color: #eee;
+	transition:transform .7s;
+}
+#close:before{
+	content:'';
+	width: 70%;
+	height: 70%;
+	border-left: 1px solid #000;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	transform: rotate(45deg);
+	transform-origin: 0% 50%;
+}
+#close:after{
+	content:'';
+	width: 70%;
+	height: 70%;
+	border-left: 1px solid #000;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	transform: rotate(-45deg);
+	transform-origin: 0% 50%;	
+}
+#close:hover{
+	transform:scale(1.2) rotate(360deg);
+	cursor: pointer;
+}
+
+
+
+
+
+
+@media screen and (max-width:767px){
+	#spotBox{
+		width: 90%;
+		height: 95%;
+		top: 2%;
+		padding: 30px 0;
+    	box-sizing: border-box;
+	}
+	#spotBox .item{
+		width: 100%;
+		font-size: 12px;
+	}
+	#spotBox .largePic{
+		height: auto;
+	}
+	#spotBox .largePic img{
+		height: 180px;
+	}
+	#spotBox .smallPic a{
+		height: 60px;
+	}
+	#spotBox .item h2{
+		font-size: 14px;
+	}
+	#boxBg #spotBox .item p{
+		font-size: 12px;
+	}
+	#spotBox p.bottom{
+		font-size: 12px;
+	}
+	#spotBox h1{
+		font-size: 16px;
+   	 	margin-left: 20px;
+   	 	margin-top: 0;
+    	line-height: 1;
+	}
+	#spotBox .content{
+		height: 100%;
+    	overflow: auto;
+    	padding: 0 10px;
+		box-sizing: border-box;
+	}
+}
+
+
+
+
+
+
+/*春天頁面*/
+
+/*標題*/
+.spring_topPlace h1{
+	font-size: 45px;
+	text-align: center;
+}
+.spring_topPlace span{
+	color: #E4AFCF;
+}
+.spring_topPlace h3{
+	font-size: 16px;
+	text-align: center;
+	padding-top: 16px;
+	padding-bottom: 32px;
+}
+.spring_topPlace .topImg img{
+	width: 100%;
+}
+
+
+
+/*內容*/
+.spring_container p{
+	font-size: 18px;
+	line-height: 2.5;
+	letter-spacing: 3px;
+	color: #666;
+}
+.springTxt{
+	width: 20%;
+	height: 300px;
+	box-sizing: border-box;
+}
+
+.springBlock{
+	position: relative;
+	padding: 20px 0;
+}
+.springBlock2{
+	height: 800px;
+}
+
+.spring_container{
+	padding: 70px 0 150px;
+}
+
+
+
+.philosophy h2, .heianzingu h2, .keagetetsudo h2{
+	color: #444;
+}
+
+.philosophy .place1{
+	text-align: left;
+	margin-left: 30px;
+	font-size: 28px;
+	line-height: 2;
+}
+.heianzingu .place2{
+	width: 50%;
+	margin: 4.166666%;
+	margin-top: 100px;
+	float:right;
+	font-size: 28px;
+	line-height: 2;
+}
+.keagetetsudo .place3{
+	font-size: 28px;
+	line-height: 2;
+}
+
+.springPic{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	box-sizing: border-box;
+}
+
+
+
+/*哲學之道*/
+
+
+.springPic1-1{
+	width: 70%;
+	height: 400px;
+	float: left;
+	background-image: url(../images/spring/phi-1.jpg);
+}
+.springPic1-2{
+	width: 62.5%;
+	height: 450px;
+	margin: 0 2%;
+	float:right;
+	background-image: url(../images/spring/phi-2.jpg);
+}
+.springPic1-3{
+	width: 50%;
+	padding-bottom: 66%;
+	margin-top: 20px;
+	margin-left: 3%;
+	margin-right: 1%;
+	float: left;
+	background-image: url(../images/spring/phi-3.jpg);
+}
+.springPic1-4{
+	width: 40%;
+	padding-bottom: 40%;
+	margin: 70px 2% 0px 4%;
+	float: left;
+	background-image: url(../images/spring/phi-4.jpg);
+}
+.springPic1-5{
+	width: 83%;
+	padding-bottom: 54%;
+	clear:right;
+	margin: auto;
+	background-image: url(../images/spring/phi-5.jpg);
+}
+
+.springTxt1-1{
+	width: 20%;
+	height: 300px;
+	margin-right: 50px;
+	margin-top: 50px;
+	float:right;
+}
+.springTxt1-2{
+	width: 25%;
+	height: 300px;
+	margin:0 4%;
+	margin-top: 75px;
+	float:left;
+}
+.springTxt1-3{
+	width: 25%;
+	height: 300px;
+	margin: 70px 10% 0px 6.666666%;
+	float:right;
+}
+
+
+
+
+/*平安神宮*/
+.springPic2-1{
+	width: 37.5%;
+	padding-bottom: 58%;
+	margin: 2.083333%;
+	float:left;
+	background-image: url(../images/spring/hei-1.jpg);
+}
+.springPic2-2{
+	width: 55%;
+	padding-bottom: 41%;
+	margin: 150px 0px 0px 2.083333%;
+	float: right;
+	background-image: url(../images/spring/hei-2.jpg);
+}
+.springPic2-3{
+	width: 33.333333%;
+	height: 400px;
+	margin: 0px 0px 0px 4.166666%;
+	float:left;
+	background-image: url(../images/spring/hei-3.jpg);
+}
+.springPic2-4{
+	width: 62.5%;
+	padding-bottom: 41%;
+	background-image: url(../images/spring/hei-4.jpg);
+	position: absolute;
+	top: 7%;
+	left: 7%;
+}
+.springPic2-5{
+	width: 59%;
+	padding-bottom: 33%;
+	background-image: url(../images/spring/hei-5.jpg);
+	position: absolute;
+	top: 48%;
+	right: 3%;
+}
+
+.springTxt2-1{
+	width: 20.833333%;
+	height: 300px;
+	margin: 0px 0px 0px 4.166666%;
+	float:left;
+}
+.springTxt2-2{
+	margin-right: 8.333333%;
+	margin-top: 8.333333%;
+	transform: translateY(91px);
+	float:right;
+}
+
+
+
+/*蹴上鐵道*/
+.springPic3-1{
+	width: 68.333333%;
+	height: 550px;
+	margin: 0 1.666666%;
+	float: right;
+	background-image: url(../images/spring/rail-1.jpg);
+}
+.springPic3-2{
+	width: 28.333333%;
+	height: 340px;
+	margin: 1.666666%;
+	margin-top: 0px;
+	float:left;
+	background-image: url(../images/spring/rail-2.jpg);
+}
+.springPic3-3{
+	width: 38.333333%;
+	padding-bottom: 650px;
+	margin: 2.5%;
+	margin-top: 0px;
+	float:right;
+	background-image: url(../images/spring/rail-3.jpeg);
+}
+.springPic3-4{
+	width: 53.333333%;
+	padding-bottom: 37.5%;
+	margin: 1.666666%;
+	margin-top: 40px;
+	float:left;
+	background-image: url(../images/spring/rail-4.jpg);
+}
+.springPic3-5{
+	width: 62.5%;
+	padding-bottom: 32%;
+	margin: 2.083333%;
+	margin-top: 0;
+	float:right;
+	background-image: url(../images/spring/rail-5.jpg);
+}
+
+
+.springTxt3-1{
+	width: 20.833333%;
+	height: 450px;
+	margin: 5% 3% 3%;
+	float:left;
+}
+.springTxt3-1 h2{
+	margin: 0;
+}
+.springTxt3-1 p{
+	padding-top: 40px;
+}
+.springTxt3-2{
+	width: 20.833333%;
+	height: 300px;
+	margin: 1.666666%;
+	margin-top: 0px;
+	float:left;
+}
+.springTxt3-3{
+	width: 20.833333%;
+	height: 300px;
+	margin: 30px 0px 0px 6.666666%;
+	float:left;
+}
+.keagetetsudo .sakura{
+	width: 33.333333%;
+	float:left;
+	margin-top: 100px;
+}
+
+
+/*地圖*/
+.mapinfo{
+	margin-top: 50px;
+	width: 100%;
+	overflow: hidden;
+}
+.map{
+	width: 65%;
+	height: 500px;
+	position: relative;
+	margin-left: 5%;
+	float: left;
+}
+.map iframe{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+}
+.mapinfo .textbox{
+	float: right;
+	width: 30%;
+	background-color: #f00;
+	position: relative;
+	top: 100px;
+	right: 10%;
+	z-index: 2;
+}
+
+
+
+.mapinfo .textbox{
+	background-color: rgba(255,255,255,1);
+	box-shadow: -4px 4px 11px #bbb;
+	padding-left: 3%;
+	padding-right: 2%;
+	box-sizing: border-box;
+}
+
+
+.mapinfo .textbox h2{
+	font-size: 28px;
+	font-weight: bold;
+	font-family: SourceHanSans;
+	position: relative;
+	text-align: left;
+	width: 100%;
+	bottom: 20px;
+	margin-bottom: 0;
+	/*text-shadow: 2px 2px 5px #333;*/
+	color: #333;
+}
+
+
+.mapinfo .textbox ul{
+	width: 100%;
+	box-sizing: border-box;
+	border-top: 1px solid #000;
+	margin: auto;
+	padding-top: 5px;
+}
+
+.mapinfo .textbox li{
+	padding: 12px 0;
+	font-size: 0;
+}
+
+
+.mapinfo .textbox li+li{
+	border-top: 1px solid #ccc;
+}
+
+.mapinfo .subtitle{
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+.mapinfo .subtext{
+	width: 65%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+
+
+
+/*附近商家*/
+.relatedPlace{
+	margin: 90px auto 0;
+	width: 95%;
+	box-sizing: border-box;
+	padding: 20px;
+	position: relative;
+}
+
+
+
+.relatedPlace h2{
+	width: 100%;
+	position: relative;
+	top: -40px;
+}
+
+.relatedPlace .stores{
+	width: 100%;
+	margin: auto;
+	display:flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+.relatedPlace .item{
+	display: block;
+	flex: 0 1 22%;
+	margin-bottom: 30px;
+}
+
+
+
+.relatedPlace .item h4{
+	padding: 10px 0;
+	font-size: 22px;
+}
+
+.relatedPlace .item p{
+	font-size: 14px;
+	line-height: 2;
+}
+
+.relatedPlace .item .img{
+	width: 100%;
+	height: 200px;
+	transition: .3s;
+}
+
+.relatedPlace .item img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+
+
+@media screen and (min-width: 768px){
+	.relatedPlace:before,
+	.relatedPlace:after{
+		content:'';
+		display: block;
+		position: absolute;
+		width: 10%;
+		height: 25%;
+		bottom: 0;
+		border-bottom: 1px solid #aaa;
+	}
+
+	.relatedPlace:before{
+		left: 0;
+		border-left: 1px solid #aaa;
+	}
+
+	.relatedPlace:after{
+		right: 0;
+		border-right: 1px solid #aaa;
+	}
+
+	.relatedPlace h2:before,
+	.relatedPlace h2:after{
+		content:'';
+		display: block;
+		position: absolute;
+		width: 30%;
+		height: 0;
+		border-bottom: 1px solid #aaa;
+		bottom: 15px;
+	}
+
+	.relatedPlace h2:before{
+		left: 120px;
+	}
+
+	.relatedPlace h2:after{
+		right: 120px;
+	}
+
+	.relatedPlace .item:hover .img{
+		filter: opacity(73%);
+	}
+} 
+
+
+/*春天頁面的手機板*/
+@media screen and (max-width: 767px){
+	.spring_container .springPic,
+	.spring_container .springTxt,
+	.spring_container .place2,
+	.mapinfo .textbox,
+	.mapinfo .map,
+	.mapinfo .map iframe{
+		float: none;
+		position: static;
+	}
+	.spring_container{
+		padding-bottom: 50px;
+	}
+	.spring_container h2.placetitle{
+		text-align: center;
+		width: 100%;
+		margin: 0;
+	}
+	.springPic,
+	.mapinfo .textbox,
+	.mapinfo .map{
+		width: 80%;
+		margin: 50px auto;
+	}
+	.clearfix :last-child{
+		margin-bottom: 0;
+	}
+	.springBlock{
+		padding: 0;
+	}
+
+	.springBlock .springTxt{
+		width: 60%;
+		height: auto;
+		margin: 50px auto 0px;
+	}
+	.springTxt2-2{
+		transform: translateY(0px);
+	}
+	.springBlock2{
+		height: auto;
+	}
+
+	.keagetetsudo .sakura{
+		display: none;
+	}
+	.relatedPlace .stores{
+		width: 95%;
+		flex-flow: column nowrap;
+	}
+	.relatedPlace h2:before,
+	.relatedPlace h2:after{
+		display: none;
+	}
+	
+}
+
+
+
+
+
+
+/*首頁手機版設定*/
+@media screen and ( max-width: 767px ){
+	.food .foodItem{
+		width: 60vw;
+		height: 60vw;
+	}
+	.food .item{
+   		margin-bottom: 100px;
+	}
+	.food .item p {
+   		width: 60%;
+   		line-height: 1.6;
+	}
+	.foodText {
+		flex-direction: column;
+	}
+	.index_container .content {
+	    width: 80%;
+	    left: 10%;
+	    box-sizing: border-box;
+	    top: initial;
+	}
+	.festival p ,.spot p{
+		width: 80%;
+		margin: 0 auto;
+	}
+	.more:before ,.more:after{
+		display: none;
+	}
+	.spot .left,
+	.spot .right{
+	    width: 100%;
+	    float: none;
+	}
+	.spot .left .item ,
+	.spot .right .item{
+		width: 90%;
+		height: 300px;
+		margin: 20px auto;
+		float: none;
+	}
+
+	.topText .child1, .topText .child2{
+		display: none;
+	}
+	header{
+		background-image: url(../images/index/frontpage.jpg);
+		background-size: cover;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+	}
+}
+
+
+
+
+
+
+/*就是動畫沒有錯啦*/
+
+.leftIn,
+.rightIn,
+.inUp{
+	visibility: hidden;
+}
+
+.fadeInLeft{
+    animation:  1s linear  1 ;
+    visibility: visible;
+}
+
+
+.fadeInRight{
+    animation:  1s linear  1 ;
+    visibility: visible;
+}
+
+
+.fadeInUp{
+    animation:  .8s linear  1 ;
+    visibility: visible;
+}
+
+
+
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-20%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(20%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 80px, 0);
+    transform: translate3d(0, 80px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+
+
+/*就是翻牌沒有錯啦*/
+
+.front,
+.back{
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	transition: 1s;
+}
+.front{
+	transform: perspective(300px) rotateY(0deg);
+}
+.back{
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: perspective(300px) rotateY(180deg);
+}
+
+.flip:hover .front{
+	transform: perspective(300px) rotateY(180deg);
+}
+.flip:hover .back{
+	transform: perspective(300px) rotateY(360deg);
+}
