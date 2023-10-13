@@ -2,7 +2,10 @@ window.onload = init;
 
 function init(){
 	var objs = document.getElementsByClassName("spotItem");
-	objs[0].onclick = lightBox;
+	objs.forEach((item)=>{
+		item.onclick = lightBox
+	})
+	
 	var close = document.getElementById("close");
 	close.onclick = closeBox;
 	changeImg();

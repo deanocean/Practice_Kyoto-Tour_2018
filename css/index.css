@@ -465,7 +465,6 @@ body{
 .copyright{
 	color: #ccc;
 	font-size: 18px;
-	padding-top: 30px;
 }
 
 
@@ -2375,7 +2374,6 @@ img[src="tour/winter3.jpg"]{
 
 
 .foodbox .item::after{
-	cursor: pointer;
 	background-image: linear-gradient(120deg,transparent 30%, rgba(255,255,255,.5) 30%, rgba(255,255,255,.5) 60%, transparent 50%);
 	background-position: -600px 0px;
 	transition: .6s;
