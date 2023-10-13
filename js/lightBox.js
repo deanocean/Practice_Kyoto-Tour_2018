@@ -2,9 +2,9 @@ window.onload = init;
 
 function init(){
 	var objs = document.getElementsByClassName("spotItem");
-	objs.forEach((item)=>{
-		item.onclick = lightBox
-	})
+	for( let i = 0 ; i<objs.length ; i++ ){
+		objs[i].onclick = lightBox;
+	}
 	
 	var close = document.getElementById("close");
 	close.onclick = closeBox;
